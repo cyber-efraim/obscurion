@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obscurion</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#06060b;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:#eee;
+}
+
+/* noturno,tome cuidado ,não temos backuppp */
+#intro{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(#090012,#120015,#000);
+  background-size:100% 400%;
+  animation:bgMove 1.2s linear infinite;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+@keyframes bgMove{
+  from{background-position:0 0}
+  to{background-position:0 400px}
+}
+.logo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:6px solid #6b0000;
+  box-shadow:0 0 35px #6b0000;
+  animation:pulse 1.6s infinite;
+  position:relative;
+  overflow:hidden;
+}
+@keyframes pulse{
+  0%{border-color:#400000}
+  50%{border-color:#b00000}
+  100%{border-color:#400000}
+}
+.line{
+  position:absolute;
+  top:-100%;
+  width:3px;
+  height:200%;
+  background:linear-gradient(transparent,#00ff6a,transparent);
+  animation:fall 1s linear infinite;
+}
+.line:nth-child(1){left:18px}
+.line:nth-child(2){left:38px;animation-delay:.15s}
+.line:nth-child(3){left:58px;animation-delay:.3s}
+.line:nth-child(4){left:78px;animation-delay:.45s}
+.line:nth-child(5){left:98px;animation-delay:.6s}
+@keyframes fall{
+  from{transform:translateY(-100%)}
+  to{transform:translateY(100%)}
+}
+.intro-text{
+  margin-top:12px;
+  color:#ff2e2e;
+  letter-spacing:4px;
+  font-size:24px;
+}
+.hide{animation:fade .6s forwards}
+@keyframes fade{to{opacity:0;visibility:hidden}}
+
+
+header{
+  background:linear-gradient(90deg,#0b0b1f,#2a0000);
+  padding:22px;
+  text-align:center;
+  font-size:32px;
+  font-weight:700;
+  color:#ff4b4b;
+  letter-spacing:6px;
+  position:relative;
+}
+header::after{
+  content:"OBSCURION";
+  position:absolute;
+  top:60px;
+  left:50%;
+  transform:translateX(-50%) scaleY(-1);
+  color:rgba(255,75,75,0.25);
+  filter:blur(2px);
+}
+
+
+.hero{
+  height:200px;
+  background:url("https://images.unsplash.com/photo-1605902711622-cfb43c4437b1") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero h1{
+  background:rgba(0,0,0,.65);
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:14px;
+  color:#ff4b4b;
+}
+
+
+nav{
+  background:#080814;
+  padding:10px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+nav button{
+  background:#111122;
+  border:1px solid #2a0000;
+  color:#ffb3b3;
+  padding:12px;
+  border-radius:10px;
+  font-size:13px;
+}
+nav button:active{background:#1c1c33}
+
+
+.container{padding:14px}
+.section{display:none}
+.section.active{display:block}
+
+.box{
+  background:#0b0b18;
+  border:1px solid #2a0000;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:16px;
+}
+.box h2{
+  color:#ff4b4b;
+  font-size:16px;
+  margin-bottom:10px;
+}
+.box p{
+  font-size:14px;
+  color:#ddd;
+}
+ul{list-style:none}
+li{
+  background:#141428;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-size:14px;
+}
+.rank{
+  font-size:12px;
+  color:#9affc7;
+  margin-top:4px;
+}
+
+
+ul button{
+  width:100%;
+  background:#111122;
+  border:1px solid #3a0000;
+  color:#ffb3b3;
+  padding:12px;
+  border-radius:10px;
+  font-size:14px;
+  cursor:pointer;
+}
+ul button:active{background:#1c1c33}
+
+@media(max-width:480px){
+  nav{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+  <div class="logo">
+    <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+  </div>
+  <div class="intro-text">OBSCURION</div>
+</div>
+
+<header>OBSCURION</header>
+
+<div class="hero">
+  <h1>SEGURANÇA • ESTRATÉGIA • INTELIGÊNCIA</h1>
+</div>
+
+<nav>
+  <button onclick="show('inicio')">Início</button>
+  <button onclick="show('ferramentas')">Ferramentas</button>
+  <button onclick="show('lideres')">Líderes</button>
+  <button onclick="show('membros')">Membros</button>
+</nav>
+
+<div class="container">
+
+<div id="inicio" class="section active">
+  <div class="box">
+    <h2>OBSCURION</h2>
+    <p>seja bem vindo,esse é nosso cantinho especial,estamos pronto para agir,Obscurion não é um local para fracos.</p>
+  </div>
+</div>
+
+<div id="ferramentas" class="section">
+  <div class="box">
+    <h2>Downloads</h2>
+    <ul>
+     
+
+      <li><button onclick="openRepo('!')">nome da ferramenta</button></li>
+      <li><button onclick="openRepo('!')">escolhe </button></li>
+      <li><button onclick="openRepo('!')">um</button></li>
+      <li><button onclick="openRepo('!')">daora </button></li>
+      <li><button onclick="openRepo('!')">noturno</button></li>
+    </ul>
+  </div>
+</div>
+
+<div id="lideres" class="section">
+  <div class="box">
+    <h2>ATAQUE</h2>
+    <ul>
+      <li>Noturno<div class="rank">lider e fundador </div></li>
+      <li>Abs.Neron<div class="rank">mestre de ataque</div></li>
+      <li>ghost<div class="rank">a lenda esqueceu de votar</div></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>MENTORIA</h2>
+    <ul>
+      <li>D.Hunter(d.ef) <div class="rank">lider da mentoria</div></li>
+     
+    </ul>
+  </div>
+  <div class="box">
+    <h2>PROFESSORES</h2>
+    <ul>
+      <li>Mess<div class="rank">Líder dos professores</div></li>
+   
+    </ul>
+  </div>
+</div>
+
+<div id="membros" class="section">
+  <div class="box">
+    <h2>Membros</h2>
+    <ul>
+      <li>nao temos</li>
+      
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<script>
+setTimeout(()=>{
+  const intro=document.getElementById("intro");
+  intro.classList.add("hide");
+  setTimeout(()=>intro.remove(),600);
+},900);
+
+function show(id){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function openRepo(url){
+  window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
