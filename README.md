@@ -1,1 +1,3 @@
 # obscurion
+
+OBS: OBSCURION V2.HTML É O ATUAL PROJETO
